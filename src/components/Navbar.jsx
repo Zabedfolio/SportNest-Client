@@ -3,6 +3,7 @@ import React from 'react';
 import { MdSportsVolleyball } from 'react-icons/md';
 
 const Navbar = () => {
+    
     return (
         <div>
             <div className="navbar bg-base-100 shadow-sm">
@@ -62,7 +63,7 @@ const Navbar = () => {
     text-white
     rounded-xl
     px-6
-    bg-gradient-to-r
+    bg-linear-to-r
     from-[#1F6F5F]
     via-[#2FA084]
     to-[#4DBB8A]
