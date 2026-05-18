@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 import { MdSportsVolleyball } from 'react-icons/md';
 
@@ -24,7 +25,7 @@ const Navbar = () => {
                             </li> */}
                                 <li><a>All Facilities</a></li>
                                 <li><a>My Bookings</a></li>
-                                <li><a>Add Facility</a></li>
+                                <li><Link href="/add-facility">Add Facility</Link></li>
                                 <li><a>Manage My Facilities</a></li>
                             </ul>
                         </div>
@@ -49,7 +50,7 @@ const Navbar = () => {
                             </li> */}
                             <li><a>All Facilities</a></li>
                             <li><a>My Bookings</a></li>
-                            <li><a>Add Facility</a></li>
+                            <li><Link href="/add-facility">Add Facility</Link></li>
                             <li><a>Manage My Facilities</a></li>
                         </ul>
                     </div>

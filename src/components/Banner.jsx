@@ -5,7 +5,6 @@ const Banner = () => {
     return (
         <section className="relative overflow-hidden bg-[#F5FBF9]">
             
-            {/* Background Blur */}
             <div className="absolute top-0 left-0 w-72 h-72 bg-[#6FCF97]/20 rounded-full blur-3xl"></div>
             <div className="absolute bottom-0 right-0 w-72 h-72 bg-[#2FA084]/20 rounded-full blur-3xl"></div>
 
@@ -13,7 +12,6 @@ const Banner = () => {
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-                    {/* Left Content */}
                     <div className="space-y-8 relative z-10">
 
                         <div className="inline-block px-4 py-2 rounded-full bg-[#2FA084]/10 text-[#1F6F5F] text-sm font-semibold">
