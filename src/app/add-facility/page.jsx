@@ -1,11 +1,12 @@
 'use client';
 
 import React from 'react';
+import toast from 'react-hot-toast';
 
 const AddFacilityPage = () => {
 
     const onSubmit = async (e) => {
-        e.preventDefault();
+        // e.preventDefault();
 
         const formData = new FormData(e.currentTarget);
         const facility = Object.fromEntries(formData.entries());
@@ -21,7 +22,8 @@ const AddFacilityPage = () => {
             body: JSON.stringify(facility)
         })
         const data = await res.json();
-        console.log(data);
+        // console.log(data);
+        toast.success('Successfully added!')
     };
 
     return (
