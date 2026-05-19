@@ -215,7 +215,7 @@ const RegisterPage = () => {
                                 href="/login"
                                 className="text-[#0F6E56] font-bold hover:underline"
                             >
-                                Sign in
+                                Log In
                             </Link>
                         </p>
 
