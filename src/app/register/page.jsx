@@ -17,134 +17,185 @@ const RegisterPage = () => {
     const [showPassword, setShowPassword] = useState(false);
 
     return (
-        <div className="min-h-screen bg-[#F5FBF9] flex items-center justify-center p-4">
+        <div className="min-h-screen w-full bg-[#F5FBF9] py-25 px-4 flex items-center justify-center">
 
-            <div className="w-full max-w-5xl grid grid-cols-1 lg:grid-cols-2 rounded-[28px] overflow-hidden shadow-2xl border border-gray-100">
+            <div className="w-full max-w-6xl min-h-[720px] grid grid-cols-1 lg:grid-cols-2 rounded-[32px] overflow-hidden shadow-2xl border border-gray-100 bg-white">
 
-                {/* ── Left Panel (Same branding, slightly simplified) ── */}
-                <div className="relative bg-[#0F6E56] p-10 flex flex-col justify-between overflow-hidden">
+                {/* ───────────────── LEFT PANEL ───────────────── */}
+                <div className="relative bg-[#0F6E56] p-10 lg:p-14 flex items-center overflow-hidden">
 
+                    {/* Decorative Shapes */}
                     <div className="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-white/5" />
                     <div className="absolute -bottom-24 -left-24 w-60 h-60 rounded-full bg-white/5" />
+                    <div className="absolute top-1/2 left-1/2 w-96 h-96 rounded-full border border-white/5 -translate-x-1/2 -translate-y-1/2" />
 
-                    {/* Logo */}
-                    <div className="flex items-center gap-3 relative z-10">
-                        <div className="w-10 h-10 rounded-xl bg-white/15 flex items-center justify-center text-white text-xl">
-                            <MdSportsVolleyball />
+                    <div className="relative z-10 max-w-md">
+
+                        {/* Logo */}
+                        <div className="flex items-center gap-3 mb-12">
+                            <div className="w-12 h-12 rounded-2xl bg-white/15 backdrop-blur-md flex items-center justify-center text-white text-2xl shadow-lg">
+                                <MdSportsVolleyball />
+                            </div>
+
+                            <span className="text-white text-2xl font-black tracking-wide">
+                                Sport<span className="font-light">Nest</span>
+                            </span>
                         </div>
-                        <span className="text-white text-xl font-black">
-                            Sport<span className="font-light">Nest</span>
-                        </span>
-                    </div>
 
-                    {/* Brand message */}
-                    <div className="relative z-10">
-                        <h2 className="text-white text-3xl font-black leading-snug mb-3">
-                            Join the game.<br />Book instantly.
-                        </h2>
+                        {/* Main Content */}
+                        <div>
+                            <p className="text-[#7FE7C8] text-sm font-semibold uppercase tracking-widest mb-4">
+                                Sports Facility Booking Platform
+                            </p>
 
-                        <p className="text-white/60 text-sm leading-relaxed mb-6">
-                            Create your account to explore and reserve top sports facilities
-                            with real-time availability.
-                        </p>
+                            <h1 className="text-white text-4xl lg:text-5xl font-black leading-tight mb-6">
+                                Join the game.
+                                <br />
+                                Book instantly.
+                            </h1>
 
-                        <div className="flex gap-6 pt-4 border-t border-white/15">
-                            <div>
-                                <p className="text-white text-lg font-black">Fast</p>
-                                <p className="text-white/50 text-xs">Registration</p>
-                            </div>
-                            <div>
-                                <p className="text-white text-lg font-black">Secure</p>
-                                <p className="text-white/50 text-xs">System</p>
-                            </div>
-                            <div>
-                                <p className="text-white text-lg font-black">24/7</p>
-                                <p className="text-white/50 text-xs">Access</p>
+                            <p className="text-white/70 text-base leading-relaxed mb-10">
+                                Create your account to discover premium sports venues,
+                                manage bookings, and reserve facilities with real-time
+                                availability.
+                            </p>
+
+                            {/* Stats */}
+                            <div className="grid grid-cols-3 gap-6 pt-8 border-t border-white/15">
+
+                                <div>
+                                    <h3 className="text-white text-2xl font-black">
+                                        Fast
+                                    </h3>
+                                    <p className="text-white/50 text-sm mt-1">
+                                        Registration
+                                    </p>
+                                </div>
+
+                                <div>
+                                    <h3 className="text-white text-2xl font-black">
+                                        Secure
+                                    </h3>
+                                    <p className="text-white/50 text-sm mt-1">
+                                        System
+                                    </p>
+                                </div>
+
+                                <div>
+                                    <h3 className="text-white text-2xl font-black">
+                                        24/7
+                                    </h3>
+                                    <p className="text-white/50 text-sm mt-1">
+                                        Access
+                                    </p>
+                                </div>
+
                             </div>
                         </div>
+
                     </div>
                 </div>
 
-                {/* ── Right Panel (New card-based form design) ── */}
-                <div className="bg-white flex items-center justify-center p-10">
+                {/* ───────────────── RIGHT PANEL ───────────────── */}
+                <div className="bg-white flex items-center justify-center p-6 sm:p-10">
 
                     <div className="w-full max-w-md">
 
+                        {/* Header */}
                         <div className="text-center mb-8">
-                            <h1 className="text-2xl font-black text-gray-900">
+
+                            <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[#E8F7F2] text-[#0F6E56] text-3xl mb-5">
+                                <MdHowToReg />
+                            </div>
+
+                            <h2 className="text-3xl font-black text-gray-900">
                                 Create Account
-                            </h1>
-                            <p className="text-sm text-gray-500 mt-1">
+                            </h2>
+
+                            <p className="text-gray-500 text-sm mt-2">
                                 Join SportNest in less than a minute
                             </p>
                         </div>
 
-                        {/* Card Form */}
-                        <div className="bg-gray-50 border border-gray-100 rounded-2xl p-6 space-y-5 shadow-sm">
+                        {/* Form Card */}
+                        <div className="bg-[#FAFAFA] border border-gray-100 rounded-3xl p-6 sm:p-7 shadow-sm space-y-5">
 
-                            {/* Name */}
+                            {/* Full Name */}
                             <div>
-                                <label className="text-xs font-semibold text-gray-500 uppercase">
+                                <label className="text-xs font-bold tracking-wide text-gray-500 uppercase">
                                     Full Name
                                 </label>
+
                                 <div className="relative mt-2">
-                                    <MdPerson className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
+                                    <MdPerson className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-lg" />
+
                                     <input
                                         type="text"
-                                        placeholder="Your name"
-                                        className="w-full h-11 pl-11 pr-4 rounded-xl border border-gray-200 bg-white text-sm outline-none focus:border-[#2FA084]"
+                                        placeholder="Enter your full name"
+                                        className="w-full h-12 pl-12 pr-4 rounded-2xl border border-gray-200 bg-white text-sm outline-none transition-all focus:border-[#2FA084] focus:ring-4 focus:ring-[#2FA084]/10"
                                     />
                                 </div>
                             </div>
 
                             {/* Email */}
                             <div>
-                                <label className="text-xs font-semibold text-gray-500 uppercase">
-                                    Email
+                                <label className="text-xs font-bold tracking-wide text-gray-500 uppercase">
+                                    Email Address
                                 </label>
+
                                 <div className="relative mt-2">
-                                    <MdEmail className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
+                                    <MdEmail className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-lg" />
+
                                     <input
                                         type="email"
                                         placeholder="you@example.com"
-                                        className="w-full h-11 pl-11 pr-4 rounded-xl border border-gray-200 bg-white text-sm outline-none focus:border-[#2FA084]"
+                                        className="w-full h-12 pl-12 pr-4 rounded-2xl border border-gray-200 bg-white text-sm outline-none transition-all focus:border-[#2FA084] focus:ring-4 focus:ring-[#2FA084]/10"
                                     />
                                 </div>
                             </div>
 
                             {/* Photo URL */}
                             <div>
-                                <label className="text-xs font-semibold text-gray-500 uppercase">
+                                <label className="text-xs font-bold tracking-wide text-gray-500 uppercase">
                                     Photo URL
                                 </label>
+
                                 <div className="relative mt-2">
-                                    <MdImage className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
+                                    <MdImage className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-lg" />
+
                                     <input
                                         type="text"
-                                        placeholder="https://..."
-                                        className="w-full h-11 pl-11 pr-4 rounded-xl border border-gray-200 bg-white text-sm outline-none focus:border-[#2FA084]"
+                                        placeholder="https://example.com/photo.jpg"
+                                        className="w-full h-12 pl-12 pr-4 rounded-2xl border border-gray-200 bg-white text-sm outline-none transition-all focus:border-[#2FA084] focus:ring-4 focus:ring-[#2FA084]/10"
                                     />
                                 </div>
                             </div>
 
                             {/* Password */}
                             <div>
-                                <label className="text-xs font-semibold text-gray-500 uppercase">
+                                <label className="text-xs font-bold tracking-wide text-gray-500 uppercase">
                                     Password
                                 </label>
+
                                 <div className="relative mt-2">
-                                    <MdLock className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
+                                    <MdLock className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-lg" />
+
                                     <input
                                         type={showPassword ? 'text' : 'password'}
-                                        placeholder="Create password"
-                                        className="w-full h-11 pl-11 pr-12 rounded-xl border border-gray-200 bg-white text-sm outline-none focus:border-[#2FA084]"
+                                        placeholder="Create a secure password"
+                                        className="w-full h-12 pl-12 pr-14 rounded-2xl border border-gray-200 bg-white text-sm outline-none transition-all focus:border-[#2FA084] focus:ring-4 focus:ring-[#2FA084]/10"
                                     />
+
                                     <button
                                         type="button"
                                         onClick={() => setShowPassword(!showPassword)}
-                                        className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400"
+                                        className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-[#0F6E56] transition"
                                     >
-                                        {showPassword ? <MdVisibilityOff /> : <MdVisibility />}
+                                        {showPassword ? (
+                                            <MdVisibilityOff className="text-xl" />
+                                        ) : (
+                                            <MdVisibility className="text-xl" />
+                                        )}
                                     </button>
                                 </div>
                             </div>
@@ -152,15 +203,18 @@ const RegisterPage = () => {
                         </div>
 
                         {/* Register Button */}
-                        <button className="w-full mt-6 h-12 bg-[#0F6E56] hover:bg-[#2FA084] text-white font-bold rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg">
-                            <MdHowToReg />
+                        <button className="w-full mt-7 h-13 rounded-2xl bg-[#0F6E56] hover:bg-[#128267] text-white font-bold flex items-center justify-center gap-2 transition-all shadow-xl hover:shadow-2xl hover:-translate-y-[1px]">
+                            <MdHowToReg className="text-xl" />
                             Create Account
                         </button>
 
                         {/* Footer */}
-                        <p className="text-center text-sm text-gray-500 mt-6">
+                        <p className="text-center text-sm text-gray-500 mt-7">
                             Already have an account?{' '}
-                            <Link href="/login" className="text-[#2FA084] font-semibold hover:underline">
+                            <Link
+                                href="/login"
+                                className="text-[#0F6E56] font-bold hover:underline"
+                            >
                                 Sign in
                             </Link>
                         </p>
