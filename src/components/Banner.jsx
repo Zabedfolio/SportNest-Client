@@ -67,7 +67,7 @@ const Banner = () => {
                         <div className="relative z-10">
 
                             <img
-                                src="https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=1200&auto=format&fit=crop"
+                                src="https://img.magnific.com/free-photo/football-grass_23-2147644477.jpg?t=st=1779192055~exp=1779195655~hmac=d921ad2e040154960892189d599631861d02052c0b4b39e9f6998bd927686d8f&w=2000"
                                 alt="Sports Banner"
                                 className="
                                     w-full
