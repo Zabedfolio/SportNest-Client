@@ -37,7 +37,7 @@ const FacilityDetailsPage = async ({ params }) => {
 
                     <div className="flex items-center gap-3">
                         <UpdateFacilities facility={data}></UpdateFacilities>
-                        <DeleteAlert></DeleteAlert>
+                        <DeleteAlert facility={data}></DeleteAlert>
                     </div>
                 </div>
             </div>

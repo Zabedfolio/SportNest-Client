@@ -4,7 +4,20 @@ import React from 'react';
 import { MdDeleteForever } from 'react-icons/md';
 import { AlertDialog, Button } from "@heroui/react";
 
-const DeleteAlert = () => {
+const DeleteAlert = ({ facility }) => {
+    const {_id,facilityName} = facility;
+
+
+    const handleDelete = async()=>{
+        const res = await fetch(`http://localhost:5000/facilities/${_id}`, {
+            method: 'DELETE',
+            headers: {
+                'content-type': 'application/json',
+            },      
+        });
+        const data = await res.json();
+        console.log(data);
+    }
     return (
         <AlertDialog>
 
@@ -31,7 +44,7 @@ const DeleteAlert = () => {
                             </h2>
 
                             <p className="mt-3 text-sm leading-6 text-gray-500">
-                                This action will permanently remove this facility and all associated booking data.
+                                This action will permanently remove <span className='font-bold text-black'>{facilityName}</span> and all associated booking data.
                                 This cannot be undone.
                             </p>
 
@@ -45,7 +58,7 @@ const DeleteAlert = () => {
                                     Cancel
                                 </Button>
 
-                                <Button
+                                <Button onClick={handleDelete}
                                     slot="close"
                                     variant="danger"
                                     className="h-11 rounded-xl px-6 font-semibold"
