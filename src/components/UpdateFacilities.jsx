@@ -24,7 +24,7 @@ import {
 const UpdateFacilities = ({ facility }) => {
 
     const onSubmit = async (e) => {
-        e.preventDefault();
+        // e.preventDefault();
 
         const formData = new FormData(e.currentTarget);
 
@@ -37,7 +37,7 @@ const UpdateFacilities = ({ facility }) => {
             const res = await fetch(
                 `http://localhost:5000/facilities/${facility._id}`,
                 {
-                    method: 'PUT',
+                    method: 'PATCH',
                     headers: {
                         'content-type': 'application/json',
                     },
