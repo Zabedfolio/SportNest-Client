@@ -26,7 +26,6 @@ const FacilityCard = ({ facility }) => {
 
                 <h3 className="font-bold text-gray-900 truncate">{facility.facilityName}</h3>
 
-                {/* Location + Capacity */}
                 <div className="flex items-center justify-between text-sm text-gray-500">
                     <div className="flex items-center gap-1">
                         <MdLocationOn className="text-[#2FA084] flex-shrink-0" />

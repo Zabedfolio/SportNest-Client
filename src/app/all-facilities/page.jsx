@@ -1,6 +1,6 @@
 'use client';
 
-import FacilityCard from '@/components/Facilitycard';
+import FacilityCard from '@/components/FacilityCard';
 import { useEffect, useState } from 'react';
 import { MdSearch } from 'react-icons/md';
 
