@@ -72,23 +72,38 @@ const AddFacilityPage = () => {
                                     Facility Type
                                 </label>
 
-                                <select
-                                    name="facilityType"
-                                    defaultValue=""
-                                    className="select select-bordered w-full rounded-xl h-14 focus:outline-none focus:border-[#2FA084]"
-                                    required
-                                >
-                                    <option value="" disabled>
-                                        Select facility type
-                                    </option>
+                                <div className="relative">
+                                    <select
+                                        name="facilityType"
+                                        defaultValue=""
+                                        required
+                                        className="w-full appearance-none rounded-xl input-bordered border border-gray-300 bg-white px-4 h-14 pr-10 text-gray-700 text-sm focus:outline-none focus:ring-2 focus:ring-[#2FA084]/30 focus:border-[#2FA084]"
+                                    >
+                                        <option value="" disabled>
+                                            Select facility type
+                                        </option>
 
-                                    <option value="Football Turf">Football Turf</option>
-                                    <option value="Cricket Ground">Cricket Ground</option>
-                                    <option value="Badminton Court">Badminton Court</option>
-                                    <option value="Basketball Court">Basketball Court</option>
-                                    <option value="Swimming Pool">Swimming Pool</option>
-                                    <option value="Tennis Court">Tennis Court</option>
-                                </select>
+                                        <option value="Football Turf">Football Turf</option>
+                                        <option value="Cricket Ground">Cricket Ground</option>
+                                        <option value="Badminton Court">Badminton Court</option>
+                                        <option value="Basketball Court">Basketball Court</option>
+                                        <option value="Swimming Pool">Swimming Pool</option>
+                                        <option value="Tennis Court">Tennis Court</option>
+                                    </select>
+
+                                    {/* custom arrow */}
+                                    <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-400">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                            <path
+                                                d="M6 9l6 6 6-6"
+                                                stroke="currentColor"
+                                                strokeWidth="2"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                            />
+                                        </svg>
+                                    </div>
+                                </div>
                             </div>
 
                             {/* Image Upload */}
