@@ -36,11 +36,11 @@ const BookingForm = ({ facilityName, slots, pricePerHour }) => {
                 <label className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Time Slot</label>
                 <div className="relative">
                     <MdAccessTime className="absolute left-4 top-1/2 -translate-y-1/2 text-[#2FA084] text-lg" />
-                    <select
+                    <select 
                         className="w-full pl-11 pr-4 py-3 rounded-xl border border-gray-200 focus:border-[#2FA084] focus:ring-2 focus:ring-[#2FA084]/20 outline-none text-sm text-gray-700 appearance-none transition-all cursor-pointer"
                         style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E")`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right 12px center' }}
                     >
-                        <option value="" disabled selected>Select a slot</option>
+                        <option  disabled selected>Select a slot</option>
                         {slots.map(slot => (
                             <option key={slot} value={slot}>{slot}</option>
                         ))}
