@@ -9,6 +9,8 @@ import {
 } from 'react-icons/md';
 import Link from 'next/link';
 import BookingForm from '@/components/BookingForm';
+import UpdateFacilities from '@/components/UpdateFacilities';
+import DeleteAlert from '@/components/DeleteAlert';
 
 const FacilityDetailsPage = async ({ params }) => {
     const { id } = await params;
@@ -34,12 +36,8 @@ const FacilityDetailsPage = async ({ params }) => {
                     </Link>
 
                     <div className="flex items-center gap-3">
-                        <button className="px-5 py-2 rounded-xl text-sm font-semibold text-[#2FA084] border-2 border-[#2FA084] hover:bg-[#2FA084] hover:text-white transition-all duration-200">
-                            Update
-                        </button>
-                        <button className="px-5 py-2 rounded-xl text-sm font-semibold text-red-500 border-2 border-red-400 hover:bg-red-500 hover:text-white transition-all duration-200">
-                            Delete
-                        </button>
+                        <UpdateFacilities facility={data}></UpdateFacilities>
+                        <DeleteAlert></DeleteAlert>
                     </div>
                 </div>
             </div>
