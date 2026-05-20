@@ -11,7 +11,6 @@ const BookingForm = ({ facilityName, slots, pricePerHour }) => {
     return (
         <form className="space-y-4">
 
-            {/* Facility name */}
             <div className="space-y-1.5">
                 <label className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Facility</label>
                 <input
@@ -22,7 +21,6 @@ const BookingForm = ({ facilityName, slots, pricePerHour }) => {
                 />
             </div>
 
-            {/* Date */}
             <div className="space-y-1.5">
                 <label className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Date</label>
                 <div className="relative">
@@ -34,7 +32,6 @@ const BookingForm = ({ facilityName, slots, pricePerHour }) => {
                 </div>
             </div>
 
-            {/* Time slot */}
             <div className="space-y-1.5">
                 <label className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Time Slot</label>
                 <div className="relative">
@@ -51,7 +48,6 @@ const BookingForm = ({ facilityName, slots, pricePerHour }) => {
                 </div>
             </div>
 
-            {/* Hours */}
             <div className="space-y-1.5">
                 <label className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Hours</label>
                 <input
@@ -64,7 +60,6 @@ const BookingForm = ({ facilityName, slots, pricePerHour }) => {
                 />
             </div>
 
-            {/* Total */}
             <div className="bg-[#F5FBF9] rounded-2xl p-4 border border-[#2FA084]/10 flex items-center justify-between">
                 <div>
                     <p className="text-xs text-gray-400">Total Price</p>

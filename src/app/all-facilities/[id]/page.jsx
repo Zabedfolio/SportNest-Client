@@ -23,9 +23,8 @@ const FacilityDetailsPage = async ({ params }) => {
     return (
         <div className="min-h-screen bg-[#F5FBF9]">
 
-            {/* Back nav */}
             <div className="bg-white border-b border-gray-100">
-                <div className="container mx-auto px-6 py-4">
+                <div className="container mx-auto px-6 py-4 flex items-center justify-between">
                     <Link
                         href="/all-facilities"
                         className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-[#2FA084] transition-colors"
@@ -33,31 +32,35 @@ const FacilityDetailsPage = async ({ params }) => {
                         <MdArrowBack className="text-base" />
                         Back to Facilities
                     </Link>
+
+                    <div className="flex items-center gap-3">
+                        <button className="px-5 py-2 rounded-xl text-sm font-semibold text-[#2FA084] border-2 border-[#2FA084] hover:bg-[#2FA084] hover:text-white transition-all duration-200">
+                            Update
+                        </button>
+                        <button className="px-5 py-2 rounded-xl text-sm font-semibold text-red-500 border-2 border-red-400 hover:bg-red-500 hover:text-white transition-all duration-200">
+                            Delete
+                        </button>
+                    </div>
                 </div>
             </div>
 
             <div className="container mx-auto px-6 py-10">
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
 
-                    {/* ── LEFT ── */}
                     <div className="lg:col-span-2 space-y-6">
 
-                        {/* Hero image */}
                         <div className="relative overflow-hidden rounded-3xl shadow-md h-[420px]">
                             <img
                                 src={data.image}
                                 alt={data.facilityName}
                                 className="w-full h-full object-cover"
                             />
-                            {/* dark gradient */}
                             <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
 
-                            {/* Badge */}
                             <span className="absolute top-5 left-5 bg-[#2FA084] text-white px-4 py-1.5 rounded-full text-xs font-semibold">
                                 {data.facilityType}
                             </span>
 
-                            {/* Title overlay */}
                             <div className="absolute bottom-6 left-6 right-6">
                                 <h1 className="text-3xl font-black text-white leading-tight drop-shadow">
                                     {data.facilityName}
@@ -75,7 +78,6 @@ const FacilityDetailsPage = async ({ params }) => {
                             </div>
                         </div>
 
-                        {/* Stats row */}
                         <div className="grid grid-cols-3 gap-4">
                             <div className="bg-white rounded-2xl p-5 border border-gray-100 text-center space-y-1">
                                 <MdSportsSoccer className="text-[#2FA084] text-2xl mx-auto" />
@@ -94,13 +96,11 @@ const FacilityDetailsPage = async ({ params }) => {
                             </div>
                         </div>
 
-                        {/* About */}
                         <div className="bg-white rounded-2xl p-6 border border-gray-100 space-y-3">
                             <h2 className="text-xl font-black text-gray-900">About this Facility</h2>
                             <p className="text-gray-600 text-sm leading-7">{data.description}</p>
                         </div>
 
-                        {/* Time slots */}
                         <div className="bg-white rounded-2xl p-6 border border-gray-100 space-y-4">
                             <h2 className="text-xl font-black text-gray-900">Available Time Slots</h2>
                             <div className="flex flex-wrap gap-2">
@@ -118,11 +118,9 @@ const FacilityDetailsPage = async ({ params }) => {
 
                     </div>
 
-                    {/* ── RIGHT — Booking Form ── */}
                     <div className="sticky top-24">
                         <div className="bg-white rounded-3xl border border-gray-100 shadow-sm overflow-hidden">
 
-                            {/* Price header */}
                             <div className="bg-[#2FA084] px-8 py-6">
                                 <p className="text-white/70 text-sm">Price per hour</p>
                                 <p className="text-4xl font-black text-white mt-1">
