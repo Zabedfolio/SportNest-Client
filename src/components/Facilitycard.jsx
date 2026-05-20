@@ -55,7 +55,7 @@ const FacilityCard = ({ facility }) => {
                 </div>
 
                 <Link
-                    href={`/facilities/${facility._id}`}
+                    href={`/all-facilities/${facility._id}`}
                     className="block w-full text-center py-2 rounded-xl text-sm font-semibold text-[#2FA084] border-2 border-[#2FA084] hover:bg-[#2FA084] hover:text-white transition-all duration-200"
                 >
                     Book Now

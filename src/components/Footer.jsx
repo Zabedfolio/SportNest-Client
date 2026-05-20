@@ -10,8 +10,9 @@ import {
     FaFacebookF,
     FaInstagram,
     FaLinkedinIn,
-    FaTwitter
 } from 'react-icons/fa';
+
+import { BsTwitterX } from 'react-icons/bs';
 
 const Footer = () => {
     return (
@@ -121,7 +122,7 @@ const Footer = () => {
                             </a>
 
                             <a className="bg-base-200 hover:bg-[#2FA084] hover:text-white transition p-3 rounded-full text-lg">
-                                <FaTwitter />
+                                <BsTwitterX />
                             </a>
 
                             <a className="bg-base-200 hover:bg-[#2FA084] hover:text-white transition p-3 rounded-full text-lg">

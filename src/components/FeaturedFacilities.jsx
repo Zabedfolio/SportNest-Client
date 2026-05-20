@@ -44,7 +44,7 @@ const FeaturedFacilities = () => {
                 ) : (
                     <>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                            {facilities.slice(0, 4).map(facility => (  
+                            {facilities.slice(0, 6).map(facility => (  
                                 <FacilityCard key={facility._id} facility={facility} />
                             ))}
                         </div>
