@@ -61,7 +61,6 @@ const Banner = () => {
 
                     </div>
 
-                    {/* Right Banner */}
                     <div className="relative">
 
                         <div className="relative z-10">
@@ -78,7 +77,6 @@ const Banner = () => {
                                 "
                             />
 
-                            {/* Floating Card */}
                             <div className="
                                 absolute
                                 -bottom-6
@@ -101,7 +99,6 @@ const Banner = () => {
 
                         </div>
 
-                        {/* Decorative Shape */}
                         <div className="
                             absolute
                             -top-8

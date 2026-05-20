@@ -7,7 +7,7 @@ const FacilityCard = ({ facility }) => {
     return (
         <div className="bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
 
-            {/* Image */}
+            
             <div className="relative h-48 overflow-hidden">
                 <img
                     src={facility.image}
@@ -22,7 +22,6 @@ const FacilityCard = ({ facility }) => {
                 </span>
             </div>
 
-            {/* Body */}
             <div className="p-4 space-y-3">
 
                 <h3 className="font-bold text-gray-900 truncate">{facility.facilityName}</h3>
@@ -39,7 +38,6 @@ const FacilityCard = ({ facility }) => {
                     </div>
                 </div>
 
-                {/* Time slots */}
                 <div>
                     <div className="flex items-center gap-1 text-xs text-gray-400 mb-1.5">
                         <MdAccessTime className="text-[#2FA084]" />
