@@ -16,7 +16,7 @@ export const auth = betterAuth({
   }, 
   trustedOrigins: [
     "http://localhost:3000",
-    "sport-nest-zabedfolio.vercel.app",
+    "https://sport-nest-zabedfolio.vercel.app",
   ], 
   socialProviders: {
         google: { 
