@@ -17,7 +17,7 @@ import { headers } from 'next/headers';
 const FacilityDetailsPage = async ({ params }) => {
     const { id } = await params;
 
-    const token = await auth.api.getToken({
+    const {token} = await auth.api.getToken({
         headers: await headers(),
     });
     console.log(token);
@@ -25,7 +25,7 @@ const FacilityDetailsPage = async ({ params }) => {
     const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/facilities/${id}`, {
         cache: 'no-store',
         headers:{
-            authorization: "logged in"
+            authorization: `Bearer ${token}`
         }
     });
     const data = await res.json();
