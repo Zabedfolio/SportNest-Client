@@ -1,13 +1,14 @@
 import { betterAuth } from "better-auth";
 import { MongoClient } from "mongodb";
 import { mongodbAdapter } from "better-auth/adapters/mongodb";
+import { getAuthBaseURL } from "./auth-url";
 
 const client = new MongoClient(process.env.MONGODB_URI);
 await client.connect();
 const db = client.db("SportNest");
 
 export const auth = betterAuth({
-  baseURL: process.env.BETTER_AUTH_URL,
+  baseURL: getAuthBaseURL(),
   database: mongodbAdapter(db, {
   }),
 
