@@ -38,11 +38,17 @@ const RegisterPage = () => {
         });
 
         if (error) return toast.error(error.message);
-        if (data){
+        if (data) {
             router.push('/');
             router.refresh();
-        } 
+        }
         console.log(data, error)
+    };
+
+    const handleGoogleSignUp = async () => {
+        const data = await authClient.signIn.social({
+            provider: "google",
+        });
     };
 
     return (
@@ -186,6 +192,29 @@ const RegisterPage = () => {
                                 Create Account
                             </button>
                         </form>
+
+                        {/* Divider */}
+                        <div className="flex items-center gap-3 my-6">
+                            <div className="flex-1 h-px bg-gray-100" />
+                            <span className="text-xs text-gray-400">or continue with</span>
+                            <div className="flex-1 h-px bg-gray-100" />
+                        </div>
+
+                        {/* Google Sign Up */}
+                        <button
+                            type="button"
+                            onClick={handleGoogleSignUp}
+                            className="w-full h-11 rounded-xl border border-gray-200 bg-white hover:bg-gray-50 text-sm font-medium text-gray-700 flex items-center justify-center gap-3 transition-all duration-200"
+                        >
+                            <svg width="16" height="16" viewBox="0 0 48 48">
+                                <path fill="#FFC107" d="M43.6 20H24v8h11.3C33.6 33.1 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.1 7.9 3l5.7-5.7C34 6.4 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20c11 0 19.6-7.9 19.6-20 0-1.3-.1-2.7-.4-4z" />
+                                <path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.4 16 18.9 13 24 13c3.1 0 5.8 1.1 7.9 3l5.7-5.7C34 6.4 29.3 4 24 4 16.3 4 9.6 8.3 6.3 14.7z" />
+                                <path fill="#4CAF50" d="M24 44c5.2 0 9.9-1.9 13.5-5l-6.2-5.2C29.4 35.5 26.8 36 24 36c-5.3 0-9.7-3-11.3-7.5l-6.5 5C9.7 40 16.4 44 24 44z" />
+                                <path fill="#1976D2" d="M43.6 20H24v8h11.3c-.8 2.3-2.3 4.3-4.3 5.8l6.2 5.2C41 35.3 44 30 44 24c0-1.3-.1-2.7-.4-4z" />
+                            </svg>
+
+                            Sign up with Google
+                        </button>
 
                         <p className="text-center text-sm text-gray-500 mt-7">
                             Already have an account?{' '}

@@ -7,6 +7,7 @@ await client.connect();
 const db = client.db("SportNest");
 
 export const auth = betterAuth({
+  baseURL: process.env.BETTER_AUTH_URL,
   database: mongodbAdapter(db, {
   }),
 
@@ -14,4 +15,10 @@ export const auth = betterAuth({
     enabled: true, 
   }, 
   trustedOrigins: ["http://localhost:3000"], 
+  socialProviders: {
+        google: { 
+            clientId: process.env.GOOGLE_CLIENT_ID, 
+            clientSecret: process.env.GOOGLE_CLIENT_SECRET, 
+        }, 
+    },
 });

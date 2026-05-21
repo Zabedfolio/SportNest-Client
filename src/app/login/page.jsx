@@ -54,6 +54,12 @@ const LoginPage = () => {
         console.log({data, error})
     };
 
+    const handleGoogleSignUp = async () => {
+        const data = await authClient.signIn.social({
+            provider: "google",
+        });
+    };
+
     return (
         <div className="min-h-screen bg-[#F5FBF9] flex items-center justify-center p-4">
             <Toaster position="top-center" />
@@ -180,7 +186,8 @@ const LoginPage = () => {
                     </div>
 
                     {/* Google */}
-                    <button className="w-full h-11 rounded-xl border border-gray-200 bg-white hover:bg-gray-50 text-sm font-medium text-gray-700 flex items-center justify-center gap-3 transition-all duration-200 mb-6">
+                    <button onClick={handleGoogleSignUp}
+                     className="w-full h-11 rounded-xl border border-gray-200 bg-white hover:bg-gray-50 text-sm font-medium text-gray-700 flex items-center justify-center gap-3 transition-all duration-200 mb-6">
                         <svg width="16" height="16" viewBox="0 0 48 48">
                             <path fill="#FFC107" d="M43.6 20H24v8h11.3C33.6 33.1 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.1 7.9 3l5.7-5.7C34 6.4 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20c11 0 19.6-7.9 19.6-20 0-1.3-.1-2.7-.4-4z"/>
                             <path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.4 16 18.9 13 24 13c3.1 0 5.8 1.1 7.9 3l5.7-5.7C34 6.4 29.3 4 24 4 16.3 4 9.6 8.3 6.3 14.7z"/>
