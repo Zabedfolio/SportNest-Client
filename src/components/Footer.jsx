@@ -13,18 +13,19 @@ import {
 } from 'react-icons/fa';
 
 import { BsTwitterX } from 'react-icons/bs';
+import Link from 'next/link';
 
 const Footer = () => {
     return (
         <footer className="bg-base-100 border-t border-base-300">
-            
+
             <div className="container mx-auto px-6 py-12">
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
 
                     {/* Brand */}
                     <div className="space-y-4">
-                        
+
                         <div className="flex items-center gap-3">
                             <a
                                 href=""
@@ -54,27 +55,27 @@ const Footer = () => {
 
                         <ul className="space-y-3 text-sm">
                             <li>
-                                <a className="hover:text-[#2FA084] transition">
+                                <Link href="/" className="hover:text-[#2FA084] transition">
                                     Home
-                                </a>
+                                </Link>
                             </li>
 
                             <li>
-                                <a className="hover:text-[#2FA084] transition">
+                                <Link href="/facilities" className="hover:text-[#2FA084] transition">
                                     All Facilities
-                                </a>
+                                </Link>
                             </li>
 
                             <li>
-                                <a className="hover:text-[#2FA084] transition">
+                                <Link href="/my-bookings" className="hover:text-[#2FA084] transition">
                                     My Bookings
-                                </a>
+                                </Link>
                             </li>
 
                             <li>
-                                <a className="hover:text-[#2FA084] transition">
-                                    Add Facility
-                                </a>
+                                <Link href="/add-facility" className="hover:text-[#2FA084] transition">
+                                    Add Facilities
+                                </Link>
                             </li>
                         </ul>
                     </div>
