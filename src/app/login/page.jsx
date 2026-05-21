@@ -1,7 +1,10 @@
 'use client';
 
+import { authClient } from '@/lib/auth-client';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import toast, { Toaster } from 'react-hot-toast';
 import { MdSportsVolleyball } from 'react-icons/md';
 import {
     MdSportsSoccer,
@@ -17,6 +20,7 @@ import {
 } from 'react-icons/md';
 
 const LoginPage = () => {
+    const router = useRouter();
     const [showPassword, setShowPassword] = useState(false);
 
     const sports = [
@@ -32,18 +36,36 @@ const LoginPage = () => {
         { value: '4.9★', label: 'Rating' },
     ];
 
+    const onSubmit = async (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.currentTarget);
+        const user = Object.fromEntries(formData.entries());
+
+        const { data, error } = await authClient.signIn.email({
+            email: user.email,
+            password: user.password,
+        });
+
+        if (error) return toast.error(error.message);
+        if (data){
+            router.push('/');
+            router.refresh();
+        } 
+        console.log({data, error})
+    };
+
     return (
         <div className="min-h-screen bg-[#F5FBF9] flex items-center justify-center p-4">
+            <Toaster position="top-center" />
+
             <div className="w-full max-w-4xl grid grid-cols-1 lg:grid-cols-2 rounded-[28px] overflow-hidden shadow-2xl border border-gray-100">
 
                 {/* ── Left Panel ── */}
                 <div className="relative bg-[#0F6E56] p-10 flex flex-col justify-between overflow-hidden">
 
-                    {/* decorative circles */}
                     <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-white/5" />
                     <div className="absolute -bottom-16 -left-16 w-52 h-52 rounded-full bg-white/5" />
 
-                    {/* Logo */}
                     <div className="flex items-center gap-3 relative z-10">
                         <div className="w-10 h-10 rounded-xl bg-white/15 flex items-center justify-center text-white text-xl">
                             <MdSportsVolleyball />
@@ -53,24 +75,15 @@ const LoginPage = () => {
                         </span>
                     </div>
 
-                    {/* Sport cards grid */}
                     <div className="grid grid-cols-2 gap-3 relative z-10 py-8">
                         {sports.map((s, i) => (
-                            <div
-                                key={i}
-                                className="bg-white/10 border border-white/15 rounded-2xl p-4 text-center"
-                            >
-                                <div className="text-white/90 text-3xl flex justify-center mb-2">
-                                    {s.icon}
-                                </div>
-                                <span className="text-white/60 text-xs font-medium tracking-wide">
-                                    {s.label}
-                                </span>
+                            <div key={i} className="bg-white/10 border border-white/15 rounded-2xl p-4 text-center">
+                                <div className="text-white/90 text-3xl flex justify-center mb-2">{s.icon}</div>
+                                <span className="text-white/60 text-xs font-medium tracking-wide">{s.label}</span>
                             </div>
                         ))}
                     </div>
 
-                    {/* Tagline + stats */}
                     <div className="relative z-10">
                         <h2 className="text-white text-2xl font-black leading-snug mb-2">
                             Your arena.<br />Your schedule.
@@ -99,14 +112,10 @@ const LoginPage = () => {
                 {/* ── Right Panel ── */}
                 <div className="bg-white px-10 py-12 flex flex-col justify-center">
 
-                    <h1 className="text-2xl font-black text-gray-900 mb-1 tracking-tight">
-                        Welcome back
-                    </h1>
-                    <p className="text-sm text-gray-500 mb-8">
-                        Sign in to manage your bookings and facilities.
-                    </p>
+                    <h1 className="text-2xl font-black text-gray-900 mb-1 tracking-tight">Welcome back</h1>
+                    <p className="text-sm text-gray-500 mb-8">Sign in to manage your bookings and facilities.</p>
 
-                    <form className="space-y-5">
+                    <form onSubmit={onSubmit} className="space-y-5">
 
                         {/* Email */}
                         <div>
@@ -117,6 +126,8 @@ const LoginPage = () => {
                                 <MdEmail className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-lg" />
                                 <input
                                     type="email"
+                                    name="email"
+                                    required
                                     placeholder="you@example.com"
                                     className="w-full h-12 pl-11 pr-4 rounded-xl border border-gray-200 bg-gray-50 text-sm text-gray-800 placeholder-gray-400 outline-none focus:border-[#2FA084] focus:bg-white transition-all"
                                 />
@@ -129,14 +140,14 @@ const LoginPage = () => {
                                 <label className="text-xs font-semibold text-gray-500 uppercase tracking-wider">
                                     Password <span className="text-[#2FA084]">*</span>
                                 </label>
-                                <a href="#" className="text-xs text-[#2FA084] font-medium hover:underline">
-                                    Forgot password?
-                                </a>
+                                <a href="#" className="text-xs text-[#2FA084] font-medium hover:underline">Forgot password?</a>
                             </div>
                             <div className="relative">
                                 <MdLock className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-lg" />
                                 <input
                                     type={showPassword ? 'text' : 'password'}
+                                    name="password"
+                                    required
                                     placeholder="Your password"
                                     className="w-full h-12 pl-11 pr-12 rounded-xl border border-gray-200 bg-gray-50 text-sm text-gray-800 placeholder-gray-400 outline-none focus:border-[#2FA084] focus:bg-white transition-all"
                                 />
