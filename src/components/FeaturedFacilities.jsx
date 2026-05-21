@@ -1,8 +1,8 @@
 'use client';
 
-import FacilityCard from '@/components/FacilityCard';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import FacilityCard from './FacilityCard';
 
 const FeaturedFacilities = () => {
     const [facilities, setFacilities] = useState([]);
