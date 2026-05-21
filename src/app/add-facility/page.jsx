@@ -6,25 +6,24 @@ import toast from 'react-hot-toast';
 const AddFacilityPage = () => {
 
     const onSubmit = async (e) => {
-        // e.preventDefault();
+    e.preventDefault();
+    const form = e.currentTarget;
 
-        const formData = new FormData(e.currentTarget);
-        const facility = Object.fromEntries(formData.entries());
+    const formData = new FormData(form);
+    const facility = Object.fromEntries(formData.entries());
 
-        // console.log(facility);
-
-
-        const res = await fetch('http://localhost:5000/facilities', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(facility)
-        })
-        const data = await res.json();
-        // console.log(data);
-        toast.success('Successfully added!')
-    };
+    const res = await fetch('http://localhost:5000/facilities', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(facility)
+    });
+    const data = await res.json();
+    
+    form.reset();
+    toast.success('Successfully added!');
+};
 
     return (
         <section className="bg-[#F5FBF9] py-16 px-4">
