@@ -19,7 +19,7 @@ const AllFacilitiesPage = () => {
         if (searchVal) params.set('search', searchVal);
         if (typeVal && typeVal !== 'All') params.set('type', typeVal);
 
-        const res = await fetch(`http://localhost:5000/facilities?${params.toString()}`);
+        const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/facilities?${params.toString()}`);
         const data = await res.json();
         setFacilities(data);
         setLoading(false);

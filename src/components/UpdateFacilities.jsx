@@ -35,7 +35,7 @@ const UpdateFacilities = ({ facility }) => {
         try {
 
             const res = await fetch(
-                `http://localhost:5000/facilities/${facility._id}`,
+                `${process.env.NEXT_PUBLIC_SERVER_URL}/facilities/${facility._id}`,
                 {
                     method: 'PATCH',
                     headers: {

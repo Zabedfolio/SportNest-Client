@@ -12,7 +12,7 @@ const AddFacilityPage = () => {
     const formData = new FormData(form);
     const facility = Object.fromEntries(formData.entries());
 
-    const res = await fetch('http://localhost:5000/facilities', {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/facilities`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

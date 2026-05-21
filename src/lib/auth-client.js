@@ -1,8 +1,7 @@
 import { createAuthClient } from "better-auth/react"
-import { getAuthBaseURL } from "./auth-url"
 
-export const authClient = createAuthClient({
-    baseURL: getAuthBaseURL(),
-})
+// Do not set baseURL here — a build-time value can freeze as localhost:3000.
+// Better Auth resolves same-origin /api/auth from window.location in the browser.
+export const authClient = createAuthClient()
 
 export const { signIn, signUp, useSession } = authClient
