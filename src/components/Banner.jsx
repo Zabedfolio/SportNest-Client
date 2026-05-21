@@ -66,7 +66,7 @@ const Banner = () => {
                         <div className="relative z-10">
 
                             <img
-                                src="https://img.magnific.com/free-photo/football-grass_23-2147644477.jpg?t=st=1779192055~exp=1779195655~hmac=d921ad2e040154960892189d599631861d02052c0b4b39e9f6998bd927686d8f&w=2000"
+                                src="https://i.ibb.co.com/b5DGCFS1/Chat-GPT-Image-May-21-2026-01-22-09-PM.png"
                                 alt="Sports Banner"
                                 className="
                                     w-full
