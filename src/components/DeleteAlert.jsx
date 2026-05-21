@@ -17,6 +17,9 @@ const DeleteAlert = ({ facility }) => {
         });
         const data = await res.json();
         console.log(data);
+        if (res.ok) {
+        window.location.reload();
+    }
     }
     return (
         <AlertDialog>
