@@ -11,7 +11,7 @@ import Link from 'next/link';
 import BookingForm from '@/components/BookingForm';
 import UpdateFacilities from '@/components/UpdateFacilities';
 import DeleteAlert from '@/components/DeleteAlert';
-import auth from '@/lib/auth';
+import {auth} from '@/lib/auth';
 import { headers } from 'next/headers';
 
 const FacilityDetailsPage = async ({ params }) => {
