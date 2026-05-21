@@ -17,6 +17,9 @@ const FacilityDetailsPage = async ({ params }) => {
 
     const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/facilities/${id}`, {
         cache: 'no-store',
+        headers:{
+            authorization: "logged in"
+        }
     });
     const data = await res.json();
 

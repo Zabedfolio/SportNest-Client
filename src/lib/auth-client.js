@@ -1,7 +1,12 @@
 import { createAuthClient } from "better-auth/react"
+import { jwtClient } from "better-auth/client/plugins"
 
-// Do not set baseURL here — a build-time value can freeze as localhost:3000.
-// Better Auth resolves same-origin /api/auth from window.location in the browser.
-export const authClient = createAuthClient()
+
+
+export const authClient = createAuthClient({
+    plugins:[
+        jwtClient()
+    ]
+})
 
 export const { signIn, signUp, useSession } = authClient
