@@ -35,7 +35,7 @@ const Banner = () => {
                         <div className="flex flex-col sm:flex-row gap-4">
 
                             <Link
-                                href="/facilities"
+                                href="/all-facilities"
                                 className="
                                     inline-flex
                                     items-center
