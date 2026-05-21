@@ -11,9 +11,16 @@ import Link from 'next/link';
 import BookingForm from '@/components/BookingForm';
 import UpdateFacilities from '@/components/UpdateFacilities';
 import DeleteAlert from '@/components/DeleteAlert';
+import auth from '@/lib/auth';
+import { headers } from 'next/headers';
 
 const FacilityDetailsPage = async ({ params }) => {
     const { id } = await params;
+
+    const token = await auth.api.getToken({
+        headers: await headers(),
+    });
+    console.log(token);
 
     const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/facilities/${id}`, {
         cache: 'no-store',
