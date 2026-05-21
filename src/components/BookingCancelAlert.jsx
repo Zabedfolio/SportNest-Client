@@ -12,7 +12,8 @@ const BookingCancelAlert = ({bookingId}) => {
         });
 
         const data = await res.json();
-        console.log(data);
+        // console.log(data);
+        window.location.reload()
     }
     return (
         <AlertDialog>
