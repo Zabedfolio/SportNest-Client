@@ -134,6 +134,7 @@ const FacilityDetailsPage = async ({ params }) => {
                                 </div>
 
                                 <BookingForm
+                                    image={data.image}
                                     facilityName={data.facilityName}
                                     slots={slots}
                                     pricePerHour={data.pricePerHour}

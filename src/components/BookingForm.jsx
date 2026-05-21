@@ -5,7 +5,7 @@ import { useState } from 'react';
 import toast from 'react-hot-toast';
 import { MdCalendarMonth, MdAccessTime } from 'react-icons/md';
 
-const BookingForm = ({ facilityName, slots, pricePerHour }) => {
+const BookingForm = ({ facilityName, slots, pricePerHour , image}) => {
 
     const { data: session } = authClient.useSession();
     const user = session?.user;
@@ -21,6 +21,7 @@ const BookingForm = ({ facilityName, slots, pricePerHour }) => {
             userId: user?.id,
             username: user?.name || user?.username,
             userImage: user?.image,
+            facilityImage: image,
         };
 
         const res = await fetch('http://localhost:5000/bookings', {
